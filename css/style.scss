@@ -1,0 +1,250 @@
+// variables ~~~
+
+// font
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+// colors
+
+$tomato: hsl(4, 100%, 67%);
+$pink: hsl(345, 95%, 65%);
+$orange: hsl(14, 97%, 62%);
+$dark-slate-grey: hsl(234, 29%, 20%);
+$charcoal-grey: hsl(235, 18%, 26%);
+$grey: hsl(231, 7%, 60%);
+$white: hsl(0, 0%, 100%);
+
+// selectors ~~~
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  font-family: Roboto;
+  padding: 0;
+  margin: 0;
+  background-color: $charcoal-grey;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sign-up, #success {
+  background-color: $white;
+  color: $dark-slate-grey;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0,0,0, 0.1);
+  box-shadow: 0 1rem 2rem rgba(0,0,0, 0.1);
+}
+
+#sign-up {
+  width: 100%;
+  max-width: 928px;
+  display: flex;
+}
+h1 {
+  margin-bottom: 0.75rem;
+  padding: 0;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  margin-top: 0.5rem; 
+  margin-left: 2.25rem;
+  margin-bottom: 0.65rem;
+  position: relative;
+}
+li::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: $tomato;
+  content: "\f058";
+  margin-right: 1rem;
+  position: absolute;
+  height: 100%;
+  left: -2.25rem;
+  top: -0.25rem;
+}
+
+ul{
+  margin-bottom: 2.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+input, button {
+  width: 100%;
+  height: 3.5rem;
+  align-self: center;
+  border-radius: 0.5rem;
+  border: 1px solid lightgray;
+  margin-bottom: 1.5rem;
+  font-size: 16px;
+  display: flex;
+}
+input {
+  padding-left: 1.5rem;
+}
+input:focus {
+  border: 1px solid black;
+  outline: none;
+}
+button {
+  border: 0;
+  font-family: 'Roboto';
+  font-weight: bold;
+  color: $white;
+  background-color: $dark-slate-grey;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background: linear-gradient(to right, $pink, $orange);
+  -webkit-box-shadow: 0 1rem 2rem rgba($tomato, 0.6);
+  box-shadow: 0 1rem 2rem rgba($tomato, 0.6);
+  cursor: pointer;
+}
+
+#success { 
+
+  display: flex;
+  flex-direction: column;
+
+  .fa-circle-check {
+    font-size: 4rem;
+    background: -webkit-gradient(linear, left bottom, right top, from($pink), to($orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2.5rem;
+  }
+
+  h1{
+  margin-bottom: 1.5rem;}
+
+  p {
+    margin-bottom: 2.5rem;
+  }
+}
+
+#success.hidden, #sign-up.hidden {display: none;}
+
+@media (min-width: 900px) {
+  body {  height: 100vh;}
+  #sign-up {
+    padding: 1.5rem;
+    border-radius: 2.25rem;
+    flex-direction: row-reverse;
+    .sign-up-image-mobile {display: none;}
+    .sign-up-image-desktop {display: block;}
+    .sign-up-text {padding: 3.5rem 4rem 0 2.5rem}
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  #success { 
+    h1{
+      line-height: 3.5rem;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  #success { 
+    h1{
+      line-height: 3rem;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  body {  height: 100vh;}
+  #sign-up {
+    padding: 1.5rem;
+    border-radius: 2.25rem;
+    flex-direction: row-reverse;
+    .sign-up-image-mobile {display: none;}
+    .sign-up-image-desktop {display: block;}
+    .sign-up-text {padding: 3.5rem 4rem 0 2.5rem}
+  }
+}
+
+@media (min-width: 500px){
+  #success { 
+    max-width: 500px;
+    padding: 3rem 4rem 2.5rem;
+    border-radius: 2rem;
+  }
+
+}
+
+@media (max-width: 499px){
+  #success { 
+    width: 100%;
+    height: 100vh;
+    padding: 9rem 2rem;
+
+    button {
+      position: absolute;
+      bottom: 1rem;
+      width: calc(100% - 3rem);
+    }
+  }
+
+}
+
+@media (max-width: 799px){
+  #sign-up {
+    flex-direction: column;
+  .sign-up-image-desktop {display: none;}
+  .sign-up-image-mobile {display: block;
+  width: 100%;
+  height: 100%;}
+  .sign-up-text {padding: 1.5rem}
+  }
+}

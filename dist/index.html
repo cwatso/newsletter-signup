@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up for Newsletter</title>
+    <script type="module" crossorigin src="/assets/index-GTg4iQR2.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-o9Fl4luk.css">
+  </head>
+  <body>
+    <div id="sign-up">
+      <img src="/images/illustration-sign-up-desktop.svg" class="sign-up-image-desktop">
+      <img src="/images/illustration-sign-up-mobile.svg" class="sign-up-image-mobile">
+      <div class="sign-up-text">
+        <h1>Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:
+          <ul>
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+        </p>
+        <form id="sign-up-form">
+          <label for="email">Email address<span id="error-message" class="hidden">Valid email required</span></label>
+          <input type="email" id="email" name="email" placeholder="email@company.com">
+          <button type="submit" formnovalidate="formnovalidate">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
+    </div>
+    <div id="success" class="hidden">
+      <span class="fa-solid fa-circle-check"></span>
+      <h1>Thanks for subscribing!</h1>
+      <p>A confirmation email has been sent to <span id="success-email"></span>. Please open it and click the button inside to confirm your subscription.</p>
+      <button id="dismiss">Dismiss message</button>
+    </div>
+  </body>
+</html>

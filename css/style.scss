@@ -109,10 +109,30 @@ form {
   flex-direction: column;
   width: 100%;
 }
+
+.error {
+  input {
+    background-color: rgba($tomato, 0.2);
+    color: $tomato;
+    border-color: $tomato;
+  }
+  #error-message {
+    display: block;
+  }
+}
+
+#error-message {
+  display: none;
+  color: $tomato;
+  margin-left: auto;
+  font-size: 12px;
+}
+
 label {
   font-size: 0.75rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  display: flex;
 }
 input, button {
   width: 100%;
@@ -124,13 +144,15 @@ input, button {
   font-size: 16px;
   display: flex;
 }
-input {
+
+#email {
   padding-left: 1.5rem;
-}
-input:focus {
+  &:focus {
   border: 1px solid black;
   outline: none;
+  }
 }
+
 button {
   border: 0;
   font-family: 'Roboto';
@@ -139,6 +161,8 @@ button {
   background-color: $dark-slate-grey;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 1rem 2rem rgba($tomato, 0);
+  transition: box-shadow 0.1s ease-in-out;
 }
 
 button:hover {
@@ -166,6 +190,10 @@ button:hover {
 
   p {
     margin-bottom: 2.5rem;
+  }
+
+  #success-email {
+    font-weight: bold;
   }
 }
 
